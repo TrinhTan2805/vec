@@ -1,0 +1,166 @@
+[
+  {
+    "key": "bienbao",
+    "name": "Biển báo giao thông",
+    "file": "bienbao.geojson",
+    "count": 4497,
+    "geomTypes": [
+      "Point"
+    ]
+  },
+  {
+    "key": "cau",
+    "name": "Cầu",
+    "file": "cau.geojson",
+    "count": 284,
+    "geomTypes": [
+      "Point"
+    ]
+  },
+  {
+    "key": "coctieu",
+    "name": "Cọc tiêu",
+    "file": "coctieu.geojson",
+    "count": 657,
+    "geomTypes": [
+      "LineString"
+    ]
+  },
+  {
+    "key": "cong",
+    "name": "Cống",
+    "file": "cong.geojson",
+    "count": 38,
+    "geomTypes": [
+      "Point"
+    ]
+  },
+  {
+    "key": "coth",
+    "name": "Cổ thắt / Nút giao",
+    "file": "coth.geojson",
+    "count": 3611,
+    "geomTypes": [
+      "Point"
+    ]
+  },
+  {
+    "key": "cotkm",
+    "name": "Cột Km",
+    "file": "cotkm.geojson",
+    "count": 1104,
+    "geomTypes": [
+      "Point"
+    ]
+  },
+  {
+    "key": "dentinhieugiaothong",
+    "name": "Đèn tín hiệu giao thông",
+    "file": "dentinhieugiaothong.geojson",
+    "count": 74,
+    "geomTypes": [
+      "Point"
+    ]
+  },
+  {
+    "key": "dentinhieugiaothong",
+    "name": "Đèn tín hiệu giao thông",
+    "file": "dentinhieugiaothong.geojson",
+    "count": 74,
+    "geomTypes": [
+      "Point"
+    ]
+  },
+  {
+    "key": "doanduong",
+    "name": "Đoạn đường",
+    "file": "doanduong.geojson",
+    "count": 1286,
+    "geomTypes": [
+      "LineString",
+      "MultiLineString"
+    ]
+  },
+  {
+    "key": "hoga",
+    "name": "Hố ga",
+    "file": "hoga.geojson",
+    "count": 88,
+    "geomTypes": [
+      "Point"
+    ]
+  },
+  {
+    "key": "holan",
+    "name": "Hố lăn / Hố đấu",
+    "file": "holan.geojson",
+    "count": 343,
+    "geomTypes": [
+      "LineString"
+    ]
+  },
+  {
+    "key": "ke",
+    "name": "Kè",
+    "file": "ke.geojson",
+    "count": 50,
+    "geomTypes": [
+      "LineString"
+    ]
+  },
+  {
+    "key": "lichsuduytubaoduong",
+    "name": "Lịch sử duy tu bảo dưỡng",
+    "file": "lichsuduytubaoduong.geojson",
+    "count": 2017,
+    "geomTypes": [
+      "LineString"
+    ]
+  },
+  {
+    "key": "moclogioi",
+    "name": "Mốc lộ giới",
+    "file": "moclogioi.geojson",
+    "count": 426,
+    "geomTypes": [
+      "Point"
+    ]
+  },
+  {
+    "key": "nutgiao",
+    "name": "Nút giao",
+    "file": "nutgiao.geojson",
+    "count": 255,
+    "geomTypes": [
+      "Point"
+    ]
+  },
+  {
+    "key": "ranhdoc",
+    "name": "Rãnh dọc",
+    "file": "ranhdoc.geojson",
+    "count": 64,
+    "geomTypes": [
+      "LineString"
+    ]
+  },
+  {
+    "key": "tuyenduong",
+    "name": "Tuyến đường",
+    "file": "tuyenduong.geojson",
+    "count": 888,
+    "geomTypes": [
+      "LineString",
+      "MultiLineString"
+    ]
+  },
+  {
+    "key": "vachson",
+    "name": "Vạch sơn đường",
+    "file": "vachson.geojson",
+    "count": 18,
+    "geomTypes": [
+      "LineString"
+    ]
+  }
+]

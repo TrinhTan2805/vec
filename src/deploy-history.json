@@ -1,0 +1,82 @@
+[
+  {
+    "version": "0.0.15",
+    "time": "22:54:33 27/5/2026",
+    "content": "- Ghi chú những thay đổi cho phiên bản tiếp theo tại đây..."
+  },
+  {
+    "version": "0.0.14",
+    "time": "18:22:15 17/5/2026",
+    "content": "1. Hoàn thiện 7 Module chính\r\n2. Xử lý màn hình đăng nhập, thêm nút trợ giúp, ghi nhớ đăng nhập\r\n3. Hoàn thiện giao diện màn hình báo cáo, thêm chức năng xem ảnh, xem danh sách báo cáo"
+  },
+  {
+    "version": "0.0.13",
+    "time": "18:20:56 17/5/2026",
+    "content": "- Chỉnh sửa hiển thị, sửa lỗi tham số onViewDetails cho component SimpleMapView trên DashboardPage."
+  },
+  {
+    "version": "0.0.12",
+    "time": "18:16:19 17/5/2026",
+    "content": "- Cập nhật bản đồ hạ tầng, tối ưu và sửa lỗi TypeScript.\n- Hoàn thiện giao diện 7 tab quản lý duy tu bảo dưỡng.\n- Sửa lỗi cấu trúc dữ liệu MaintenanceType."
+  },
+  {
+    "version": "0.0.11",
+    "time": "14:02:13 10/5/2026",
+    "content": "- Ghi chú những thay đổi cho phiên bản tiếp theo tại đây..."
+  },
+  {
+    "version": "0.0.10",
+    "time": "13:37:37 10/5/2026",
+    "content": "- Ghi chú những thay đổi cho phiên bản tiếp theo tại đây..."
+  },
+  {
+    "version": "0.0.9",
+    "time": "13:33:47 10/5/2026",
+    "content": "- Ghi chú những thay đổi cho phiên bản tiếp theo tại đây..."
+  },
+  {
+    "version": "0.0.8",
+    "time": "10:03:51 9/5/2026",
+    "content": "- Ghi chú những thay đổi cho phiên bản tiếp theo tại đây..."
+  },
+  {
+    "version": "0.0.7",
+    "time": "10:05:00 9/5/2026",
+    "content": "- Tích hợp dữ liệu kiểm tra từ di động (Lý trình, Địa chỉ, GPS, Thời tiết)\n- Tối ưu hóa giao diện form thêm mới/chỉnh sửa KCHT: bố cục 2 cột, hỗ trợ responsive\n- Bổ sung tính năng gửi thông báo cho quản lý (chọn nhiều người nhận)\n- Sửa lỗi hiển thị tiếng Việt và các lỗi cú pháp giao diện"
+  },
+  {
+    "version": "0.0.6",
+    "time": "09:22:34 25/4/2026",
+    "content": "- Ghi chú những thay đổi cho phiên bản tiếp theo tại đây..."
+  },
+  {
+    "version": "0.0.5",
+    "time": "10:21:32 19/4/2026",
+    "content": "- Ghi chú những thay đổi cho phiên bản tiếp theo tại đây..."
+  },
+  {
+    "version": "0.0.4",
+    "time": "23:12:41 15/4/2026",
+    "content": "- Hoàn thiện tính năng Tìm kiếm Menu Sidebar và tự động mở (expand) Menu cha\r\n- Tự động hóa hơn 600 đường dẫn (breadcrumbs) cho tài liệu mô tả màn hình\r\n- Khắc phục lỗi A11y/Axe và fix thuộc tính aria-label, title cho các bộ lọc Báo cáo\r\n- Tối ưu hiệu năng rendering cho Layout tổng quan\r\n- Tự động hóa hơn 600 đường dẫn (breadcrumbs) cho tài liệu mô tả màn hình\r\n- Khắc phục lỗi A11y/Axe và fix thuộc tính aria-label, title cho các bộ lọc Báo cáo\r\n- Tối ưu hiệu năng rendering cho Layout tổng quan"
+  },
+  {
+    "version": "0.0.3",
+    "time": "10:13:22 12/4/2026",
+    "content": "- Hoàn thiện tính năng Tìm kiếm Menu Sidebar và tự động mở (expand) Menu cha\n- Tự động hóa hơn 600 đường dẫn (breadcrumbs) cho tài liệu mô tả màn hình\n- Khắc phục lỗi A11y/Axe và fix thuộc tính aria-label, title cho các bộ lọc Báo cáo\n- Tối ưu hiệu năng rendering cho Layout tổng quan"
+  },
+  {
+    "version": "0.0.2",
+    "time": "23:47:54 8/4/2026",
+    "content": "- Ghi chú những thay đổi cho phiên bản tiếp theo tại đây..."
+  },
+  {
+    "version": "0.0.1",
+    "time": "23:41:10 8/4/2026",
+    "content": "- Cập nhật tính năng thêm thời gian và ngày giờ.\n- Hiển thị nội dung các thay đổi trong phiên bản mới.\n- Tối ưu hóa giao diện người dùng."
+  },
+  {
+    "version": "1.0.0",
+    "time": "08:00:00, 08/04/2026",
+    "content": "Phiên bản khởi tạo hệ thống."
+  }
+]
