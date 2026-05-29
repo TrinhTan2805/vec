@@ -66,6 +66,7 @@ import UserManagement from "./pages/admin/UserManagement";
 import CauHinhChungHeThong from "./pages/admin/CauHinhChungHeThong";
 import ChinhSachMatKhau from "./pages/admin/ChinhSachMatKhau";
 import NhomQuyenNguoiDung from "./pages/admin/NhomQuyenNguoiDung";
+import NhatKyHoatDong from "./pages/admin/NhatKyHoatDong";
 import Login from "./pages/auth/Login";
 import { Anchor, Navigation, Waves, Compass, Milestone, LifeBuoy, Ruler as RulerIcon, Route as RouteIcon, Building2 as Building2Icon, LandPlot as LandPlotIcon, Settings, ShieldCheck, Zap, Activity, UserCheck, RefreshCw, Code2, Users, Lock, History, AlertTriangle, FileText, Bell, LayoutDashboard, Map } from "lucide-react";
 import RealtimeTracking from "./pages/RealtimeTracking";
@@ -313,7 +314,8 @@ export const router = createBrowserRouter([
       { path: "admin/danh-muc-dia-phan", element: <AdminOperationList title="Danh mục địa phận" category="Quy định 742" icon={<Navigation className="size-8 text-teal-600" />} /> },
       { path: "admin/timeout", element: <AdminOperationList title="Thời gian chờ (timeout)" category="Quy định 742" icon={<RulerIcon className="size-8 text-orange-500" />} /> },
       { path: "admin/lich-su-tac-dong", element: <AdminOperationList title="Lịch sử tác động" category="Quy định 742" icon={<History className="size-8 text-slate-500" />} /> },
-      { path: "admin/lich-su-loi", element: <AdminOperationList title="Lịch sử lỗi phát sinh" category="Quy định 742" icon={<AlertTriangle className="size-8 text-red-500" />} /> },
+      { path: "admin/lich-su-loi", Component: NhatKyHoatDong },
+      { path: "admin/nhat-ky-hoat-dong", Component: NhatKyHoatDong },
       { path: "admin/chinh-sach-luu-tru", element: <AdminOperationList title="Chính sách lưu trữ nhật ký" category="Quy định 742" icon={<FileText className="size-8 text-indigo-400" />} /> },
       { path: "admin/luu-log", element: <AdminOperationList title="Lưu log hệ thống" category="Quy định 742" icon={<FileText className="size-8 text-slate-400" />} /> },
       { path: "admin/gui-log-api", element: <AdminOperationList title="Gửi log tập trung (API)" category="Quy định 742" icon={<Zap className="size-8 text-yellow-500" />} /> },
