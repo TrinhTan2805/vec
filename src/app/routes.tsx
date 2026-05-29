@@ -65,6 +65,7 @@ import NotificationManagement from "./pages/admin/NotificationManagement";
 import UserManagement from "./pages/admin/UserManagement";
 import CauHinhChungHeThong from "./pages/admin/CauHinhChungHeThong";
 import ChinhSachMatKhau from "./pages/admin/ChinhSachMatKhau";
+import NhomQuyenNguoiDung from "./pages/admin/NhomQuyenNguoiDung";
 import Login from "./pages/auth/Login";
 import { Anchor, Navigation, Waves, Compass, Milestone, LifeBuoy, Ruler as RulerIcon, Route as RouteIcon, Building2 as Building2Icon, LandPlot as LandPlotIcon, Settings, ShieldCheck, Zap, Activity, UserCheck, RefreshCw, Code2, Users, Lock, History, AlertTriangle, FileText, Bell, LayoutDashboard, Map } from "lucide-react";
 import RealtimeTracking from "./pages/RealtimeTracking";
@@ -305,7 +306,7 @@ export const router = createBrowserRouter([
 
       // Quản trị vận hành - Tích hợp Quy định 742
       { path: "admin/chinh-sach-truy-cap", element: <AdminOperationList title="Chính sách truy cập" category="Quy định 742" icon={<Lock className="size-8 text-red-600" />} /> },
-      { path: "admin/nhom-quyen", element: <AdminOperationList title="Nhóm quyền người dùng" category="Quy định 742" icon={<ShieldCheck className="size-8 text-blue-700" />} /> },
+      { path: "admin/nhom-quyen", Component: NhomQuyenNguoiDung },
       { path: "admin/tai-khoan", element: <AdminOperationList title="Tài khoản người dùng" category="Quy định 742" icon={<Users className="size-8 text-slate-700" />} /> },
       { path: "admin/co-cau-to-chuc", element: <AdminOperationList title="Cơ cấu tổ chức" category="Quy định 742" icon={<Building2Icon className="size-8 text-slate-600" />} /> },
       { path: "admin/danh-muc-dia-phan", element: <AdminOperationList title="Danh mục địa phận" category="Quy định 742" icon={<Navigation className="size-8 text-teal-600" />} /> },
