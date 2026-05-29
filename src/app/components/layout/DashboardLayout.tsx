@@ -678,25 +678,8 @@ export default function DashboardLayout() {
   }, [menuSearchQuery, activeModule]);
 
   // Get page title based on current route
-  const getPageTitle = () => {
+  const getPageTitle = (): React.ReactNode => {
     const path = location.pathname;
-    const isConfigRoute = [
-      "/admin/cau-hinh-chung",
-      "/admin/dang-nhap",
-      "/admin/chinh-sach-mat-khau",
-      "/admin/khoa-tai-khoan"
-    ].includes(path);
-    if (isConfigRoute) {
-      return (
-        <span className="flex items-center gap-1.5 text-[13px] text-[#64748b] font-medium">
-          <span>Quản trị</span>
-          <span className="text-slate-300">/</span>
-          <span>Quản lý cấu hình chung hệ thống</span>
-          <span className="text-slate-300">/</span>
-          <span className="text-[16px] font-semibold text-[#020817]">Quản lý cấu hình chung hệ thống</span>
-        </span>
-      );
-    }
     switch (path) {
       case "/":
         return "Tổng quan hệ thống";
@@ -709,6 +692,96 @@ export default function DashboardLayout() {
       case "/bao-ve-ha-tang":
         return "Quản lý phản ánh, xử lý sự cố, vi phạm";
     }
+    
+    // Custom admin breadcrumbs trails
+    if (path.includes("admin/nhat-ky-hoat-dong") || path.includes("admin/lich-su-loi")) {
+      return (
+        <div className="flex items-center gap-1.5 text-[14px] font-semibold text-slate-500">
+          <span>Quản trị</span>
+          <span className="text-slate-350">|</span>
+          <span>Module Quản trị hệ thống</span>
+          <span className="text-slate-350">|</span>
+          <span>Kiểm soát truy cập</span>
+          <span className="text-slate-350">|</span>
+          <span className="text-slate-900 font-bold">Quản lý nhật ký hoạt động</span>
+        </div>
+      );
+    }
+    if (path.includes("admin/phan-quyen-truy-cap") || path.includes("admin/nhom-quyen")) {
+      return (
+        <div className="flex items-center gap-1.5 text-[14px] font-semibold text-slate-500">
+          <span>Quản trị</span>
+          <span className="text-slate-350">|</span>
+          <span>Module Quản trị hệ thống</span>
+          <span className="text-slate-350">|</span>
+          <span>Kiểm soát truy cập</span>
+          <span className="text-slate-350">|</span>
+          <span className="text-slate-900 font-bold">Phân quyền truy cập</span>
+        </div>
+      );
+    }
+    if (path.includes("admin/timeout")) {
+      return (
+        <div className="flex items-center gap-1.5 text-[14px] font-semibold text-slate-500">
+          <span>Quản trị</span>
+          <span className="text-slate-350">|</span>
+          <span>Module Quản trị hệ thống</span>
+          <span className="text-slate-350">|</span>
+          <span>Kiểm soát truy cập</span>
+          <span className="text-slate-350">|</span>
+          <span className="text-slate-900 font-bold">Quản lý thời gian chờ (Timeout)</span>
+        </div>
+      );
+    }
+    if (path.includes("admin/chinh-sach-mat-khau")) {
+      return (
+        <div className="flex items-center gap-1.5 text-[14px] font-semibold text-slate-500">
+          <span>Quản trị</span>
+          <span className="text-slate-350">|</span>
+          <span>Module Quản trị hệ thống</span>
+          <span className="text-slate-350">|</span>
+          <span>Xác thực người sử dụng</span>
+          <span className="text-slate-350">|</span>
+          <span className="text-slate-900 font-bold">Thiết lập chính sách mật khẩu</span>
+        </div>
+      );
+    }
+    if (path.includes("admin/khoa-tai-khoan")) {
+      return (
+        <div className="flex items-center gap-1.5 text-[14px] font-semibold text-slate-500">
+          <span>Quản trị</span>
+          <span className="text-slate-350">|</span>
+          <span>Module Quản trị hệ thống</span>
+          <span className="text-slate-350">|</span>
+          <span>Xác thực người sử dụng</span>
+          <span className="text-slate-350">|</span>
+          <span className="text-slate-900 font-bold">Khóa tài khoản sau số lần đăng nhập sai</span>
+        </div>
+      );
+    }
+    if (path.includes("admin/cau-hinh-chung")) {
+      return (
+        <div className="flex items-center gap-1.5 text-[14px] font-semibold text-slate-500">
+          <span>Quản trị</span>
+          <span className="text-slate-350">|</span>
+          <span>Module Quản trị hệ thống</span>
+          <span className="text-slate-350">|</span>
+          <span className="text-slate-900 font-bold">Quản lý cấu hình chung hệ thống</span>
+        </div>
+      );
+    }
+    if (path.includes("admin/quan-ly-nguoi-dung") || path.includes("admin/tai-khoan")) {
+      return (
+        <div className="flex items-center gap-1.5 text-[14px] font-semibold text-slate-500">
+          <span>Quản trị</span>
+          <span className="text-slate-350">|</span>
+          <span>Module Quản trị hệ thống</span>
+          <span className="text-slate-350">|</span>
+          <span className="text-slate-900 font-bold">Quản lý người dùng</span>
+        </div>
+      );
+    }
+
     if (path.includes("duong-bo/tuyen")) return "Quản lý Tuyến Đường Bộ";
     if (path.includes("duong-bo/doan-dia-phan")) return "Quản lý Đoạn đường theo địa phận";
     if (path.includes("duong-bo/doan-mat-cat")) return "Quản lý Đoạn đường theo mặt cắt";
@@ -939,7 +1012,14 @@ export default function DashboardLayout() {
                 "/admin/cau-hinh-chung",
                 "/admin/dang-nhap",
                 "/admin/chinh-sach-mat-khau",
-                "/admin/khoa-tai-khoan"
+                "/admin/khoa-tai-khoan",
+                "/admin/nhom-quyen",
+                "/admin/phan-quyen-truy-cap",
+                "/admin/timeout",
+                "/admin/nhat-ky-hoat-dong",
+                "/admin/lich-su-loi",
+                "/admin/quan-ly-nguoi-dung",
+                "/admin/tai-khoan"
               ].includes(location.pathname) ? (
                 getPageTitle()
               ) : (
