@@ -1,0 +1,241 @@
+5: TT=A | TEN=Phân hệ quản trị hệ thống | PATH=
+6: TT=I | TEN=Modules Quản trị hệ thống | PATH=
+7: TT=1 | TEN=Quản lý người dùng | PATH=http://localhost:4000/admin/tai-khoan
+12: TT=2 | TEN=Quản lý cầu hình chung hệ thống | PATH=http://localhost:4000/he-thong/cau-hinh
+15: TT= | TEN=Xác thực người sử dụng | PATH=
+16: TT=3 | TEN=Đăng nhập hệ thống | PATH=http://localhost:4000/
+17: TT=4 | TEN=Thiết lập chính sách mật khẩu | PATH=http://localhost:4000/admin/tai-khoan
+18: TT=5 | TEN=Khóa tài khoản sau số lần đăng nhập sai | PATH=http://localhost:4000/admin/tai-khoan
+19: TT= | TEN=Kiểm soát truy cập | PATH=
+20: TT=6 | TEN=Quản lý thời gian chờ (Timeout) | PATH=http://localhost:4000/admin/timeout
+21: TT=7 | TEN=Phân quyền truy cập | PATH=
+22: TT=8 | TEN=Quản lý nhật ký hoạt động hệ thống (Audit Log) | PATH=
+26: TT=II | TEN=Modules quản trị danh mục | PATH=
+27: TT=9 | TEN=Danh mục Phân quyền chức năng | PATH=
+30: TT=10 | TEN=Quản lý danh mục địa phận tỉnh | PATH=http://localhost:4000/admin/danh-muc-dia-phan
+33: TT=11 | TEN=Quản lý danh mục địa phận xã | PATH=http://localhost:4000/admin/danh-muc-dia-phan
+36: TT=12 | TEN=Quản lý danh mục phòng ban, trung tâm VEC | PATH=http://localhost:4000/danh-muc/phong-ban
+39: TT=13 | TEN=Quản lý danh mục các tuyến cao tốc do VEC quản lý | PATH=http://localhost:4000/danh-muc/tuyen-cao-toc
+42: TT=14 | TEN=Quản lý danh mục các đơn vị quản lý, khai thác, giám sát trên các tuyến | PATH=http://localhost:4000/danh-muc/don-vi
+45: TT=15 | TEN=Quản lý danh mục tài sản trên tuyến | PATH=http://localhost:4000/danh-muc/tai-san
+51: TT=16 | TEN=Quản lý danh mục thiết bị (thiết bị văn phòng, thiết bị CNTT và các thiết bị khác) | PATH=http://localhost:4000/danh-muc/thiet-bi
+54: TT=17 | TEN=Quản lý danh mục kho vật lý | PATH=http://localhost:4000/danh-muc/kho-vat-ly
+57: TT=18 | TEN=Quản lý danh mục hồ sơ tài sản đường cao tốc | PATH=http://localhost:4000/danh-muc/ho-so-tai-san
+60: TT= | TEN=Quản lý danh mục đánh giá chấm điểm giám sát | PATH=
+61: TT=19 | TEN=Quản lý danh mục đánh giá bảo trì | PATH=http://localhost:4000/danh-muc/danh-gia-bao-tri
+64: TT=20 | TEN=Quản lý danh mục đánh giá sửa chữa | PATH=http://localhost:4000/danh-muc/danh-gia-sua-chua
+67: TT=21 | TEN=Quản lý danh mục tiêu chí đánh giá vận hành | PATH=http://localhost:4000/danh-muc/tieu-chi-van-hanh
+70: TT=22 | TEN=Quản lý danh mục mục sơ đồ mặt bằng | PATH=http://localhost:4000/danh-muc/so-do-mat-bang
+73: TT=23 | TEN=Quản lý danh mục của các lớp tài sản | PATH=http://localhost:4000/danh-muc/lop-tai-san
+76: TT=III | TEN=Quản lý tích hợp, chia sẻ | PATH=
+77: TT=24 | TEN=Quản lý dịch vụ | PATH=
+81: TT=25 | TEN=Theo dõi và giám sát tình trạng dịch vụ | PATH=
+83: TT=26 | TEN=Quản lý cấu hình dịch vụ | PATH=
+87: TT= | TEN=Chia sẻ dữ liệu dữ liệu tài sản | PATH=
+88: TT=27 | TEN=Dịch vụ dữ liệu tổng hợp tài sản | PATH=
+89: TT=28 | TEN=Dịch vụ dữ liệu chi tiết tài sản | PATH=
+90: TT= | TEN=Chia sẻ dịch vụ bảo trì tài sản | PATH=
+91: TT=29 | TEN=Dịch vụ dữ liệu bảo trì định kỳ | PATH=
+92: TT=30 | TEN=Dịch vụ dữ liệu các yêu cầu theo thời gian, loại yêu cầu | PATH=
+93: TT=B | TEN=Màn hình chính (Dashboard) | PATH=
+94: TT=31 | TEN=Tổng hợp số lượng tài sản | PATH=
+95: TT=32 | TEN=Cảnh báo tài sản sắp đến hạn thanh lý | PATH=
+96: TT=33 | TEN=Cảnh báo tài sản sắp đến hạn bảo trì | PATH=
+97: TT=34 | TEN=Tổng hợp tài sản đã thanh lý, thanh hủy | PATH=
+98: TT=35 | TEN=Thông tin hồ sơ tài sản | PATH=
+99: TT=36 | TEN=Hoạt động kiểm kê tài sản | PATH=
+100: TT=37 | TEN=Tổng hợp hoạt động kiểm tra tài sản | PATH=
+101: TT=38 | TEN=Cảnh báo kết quả kiểm tra bất thường | PATH=
+102: TT=39 | TEN=Tiến độ thực hiện kế hoạch bảo trì | PATH=
+103: TT=40 | TEN=Tài sản có lịch bảo trì định kỳ | PATH=
+104: TT=41 | TEN=Tình trạng xử lý công việc sửa chữa | PATH=
+105: TT=42 | TEN=Tiếp nhận và xử lý phản ánh từ hiện trường | PATH=
+106: TT=43 | TEN=Phân tích xu hướng sự cố lặp lại | PATH=
+107: TT=44 | TEN=Đánh giá hiệu suất công tác bảo trì | PATH=
+108: TT=C | TEN=Phân hệ Quản lý tài sản trên đường cao tốc | PATH=
+109: TT=I | TEN=Quản lý tài sản trên bản đồ | PATH=
+110: TT=I.1 | TEN=Quản lý bản đồ nền | PATH=
+111: TT=45 | TEN=Cấu hình bản đồ nền | PATH=
+114: TT=46 | TEN=Thay đổi bản đồ đồ nền | PATH=
+117: TT=I.2 | TEN=Quản lý lý dữ liệu 3D | PATH=
+118: TT=47 | TEN=Cài đặt hiển thị 3D cho loại dữ liệu dạng điểm | PATH=
+123: TT=48 | TEN=Cập nhật dữ liệu 3D trên bản đồ | PATH=
+127: TT=I.3 | TEN=Quản lý lớp thông tin tài sản trên bản đồ | PATH=
+128: TT=49 | TEN=Thêm lớp dữ liệu bản đồ mới | PATH=
+131: TT=50 | TEN=Quản lý các lớp thông tin | PATH=
+134: TT=51 | TEN=Cập nhật dữ liệu tài sản trên bản đồ | PATH=
+138: TT=52 | TEN=Khai thác tài sản trên bản đồ | PATH=
+144: TT=53 | TEN=Định vị tài sản theo tuyến | PATH=
+145: TT=II | TEN=Quản lý thiết bị trên sơ đồ mặt bằng | PATH=http://localhost:4000/mat-bang
+146: TT=54 | TEN=Thêm thông tin thiết bị trên sơ đồ mặt bằng | PATH=
+150: TT=55 | TEN=Cập nhật thiết bị trên sơ đồ bằng bằng | PATH=
+153: TT=56 | TEN=Khai thác tài sản, thiết bị trên sơ đồ mặt bằng | PATH=
+157: TT=III | TEN=Quản lý tài sản trên bình đồ duỗi thẳng | PATH=
+158: TT=57 | TEN=Hiển thị tài sản trên bình đồ duỗi thẳng | PATH=
+159: TT=58 | TEN=Tìm kiếm tài sản trên bình đồ | PATH=
+160: TT=59 | TEN=Xem chi tiết tài sản trên bình đồ | PATH=
+161: TT=60 | TEN=Xuất dữ liệu bình đồ duỗi thẳng | PATH=
+162: TT=IV | TEN=Quản lý mô hình BIM | PATH=http://localhost:4000/bim
+163: TT=61 | TEN=Tích hợp mô hình BIM | PATH=
+167: TT=62 | TEN=Sửa mô hình BIM | PATH=
+169: TT=63 | TEN=Xóa mô hình BIM | PATH=
+170: TT=64 | TEN=Quản lý phiên bản mô hình | PATH=
+174: TT=65 | TEN=So sánh phiên bản mô hình | PATH=
+176: TT=66 | TEN=Quản lý lớp hiển thị dữ liệu | PATH=
+177: TT=67 | TEN=Công cụ đo đạc và tương tác | PATH=
+178: TT=68 | TEN=Tương tác với tài sản, thiết bị | PATH=
+179: TT=69 | TEN=Liên kết thông tin hồ sơ tài liệu của tài sản thiết bị | PATH=
+180: TT=70 | TEN=Tìm kiếm tài sản trên mô hình | PATH=
+181: TT=71 | TEN=Lọc hiển thị theo điều kiện thuộc tính | PATH=
+182: TT=72 | TEN=Gắn cảnh báo/ghi chú vào đối tượng | PATH=
+183: TT=73 | TEN=Trích xuất dữ liệu thống kê từ mô hình | PATH=
+184: TT=V | TEN=Nghiệp vụ quản lý tài sản | PATH=
+185: TT=V.1. | TEN=Quản lý thông tin tài sản | PATH=
+186: TT=74 | TEN=Quản lý Biển báo | PATH=http://localhost:4000/phu-tro/bien-bao
+191: TT=75 | TEN=Quản lý Cầu | PATH=http://localhost:4000/cau/lon
+196: TT=76 | TEN=Quản lý Cống dân sinh | PATH=http://localhost:4000/phu-tro/cong
+201: TT=77 | TEN=Quản lý Cống thoát nước | PATH=http://localhost:4000/phu-tro/cong
+206: TT=78 | TEN=Quản lý Cột KM | PATH=http://localhost:4000/phu-tro/cot-km
+211: TT=79 | TEN=Quản lý Cột GPMB, MLG | PATH=http://localhost:4000/phu-tro/cot-gpmb
+216: TT=80 | TEN=Quản lý Dải phân cách | PATH=http://localhost:4000/phu-tro/dai-phan-cach
+221: TT=81 | TEN=Quản lý Đất hạ tầng | PATH=http://localhost:4000/phu-tro/dat-ha-tang
+226: TT=82 | TEN=Quản lý Đường gom | PATH=http://localhost:4000/duong-bo/duong-gom
+231: TT=83 | TEN=Quản lý Giá long môn | PATH=http://localhost:4000/phu-tro/gia-long-mon
+236: TT=84 | TEN=Quản lý Hàng rào bảo vệ | PATH=http://localhost:4000/phu-tro/hang-rao-bao-ve
+241: TT=85 | TEN=Quản lý Hàng rào chống chói | PATH=http://localhost:4000/phu-tro/hang-rao-chong-choi
+246: TT=86 | TEN=Quản lý Hầm | PATH=http://localhost:4000/ham
+251: TT=87 | TEN=Quản lý Hố ga | PATH=http://localhost:4000/phu-tro/ho-ga
+256: TT=88 | TEN=Quản lý Hệ thống chiếu sáng | PATH=http://localhost:4000/phu-tro/he-thong-chieu-sang
+261: TT=89 | TEN=Quản lý Hệ thống điện | PATH=http://localhost:4000/phu-tro/he-thong-dien
+266: TT=90 | TEN=Quản lý Hệ thống ITS | PATH=http://localhost:4000/phu-tro/he-thong-its
+271: TT=91 | TEN=Quản lý Kho bãi | PATH=http://localhost:4000/phu-tro/kho-bai
+276: TT=92 | TEN=Quản lý Mái dốc | PATH=http://localhost:4000/phu-tro/mai-doc
+281: TT=93 | TEN=Quản lý Mặt đường | PATH=http://localhost:4000/phu-tro/mat-duong
+286: TT=94 | TEN=Quản lý Nút giao đường bộ | PATH=http://localhost:4000/nut-giao
+291: TT=95 | TEN=Quản lý Phương tiện đi lại | PATH=http://localhost:4000/tai-san/phuong-tien-di-lai
+296: TT=96 | TEN=Quản lý Rãnh dọc | PATH=http://localhost:4000/phu-tro/ranh-doc
+301: TT=97 | TEN=Quản lý Rào chắn ồn | PATH=http://localhost:4000/dac-thu/rao-chan-on
+306: TT=98 | TEN=Quản lý Tôn hộ lan | PATH=http://localhost:4000/phu-tro/ton-ho-lan
+311: TT=99 | TEN=Quản lý Thảm cỏ cây xanh | PATH=http://localhost:4000/phu-tro/tham-co
+316: TT=100 | TEN=Quản lý Thiết bị cân xe | PATH=http://localhost:4000/dac-thu/tram-can-xe
+321: TT=101 | TEN=Quản lý Thiết bị O&M | PATH=http://localhost:4000/tai-san/thiet-bi-om
+326: TT=102 | TEN=Quản lý Thiết bị thí nghiệm | PATH=http://localhost:4000/phu-tro/thiet-bi-thi-nghiem
+331: TT=103 | TEN=Quản lý Trạm dừng nghỉ | PATH=http://localhost:4000/dac-thu/tram-dung-nghi
+336: TT=104 | TEN=Quản lý Trạm thu phí | PATH=http://localhost:4000/dac-thu/tram-thu-phi
+341: TT=105 | TEN=Quản lý Trung tâm điều hành | PATH=http://localhost:4000/dac-thu/trung-tam-dieu-hanh
+346: TT=106 | TEN=Quản lý Vạch kẻ đường | PATH=http://localhost:4000/phu-tro/vach-ke
+351: TT=107 | TEN=Quản lý thiết bị văn phòng, thiết bị CNTT | PATH=http://localhost:4000/tai-san/thiet-bi-van-phong
+356: TT=108 | TEN=Quản lý cấu hình cảnh báo tài sản | PATH=http://localhost:4000/he-thong/cau-hinh-canh-bao
+360: TT=IV.2. | TEN=Quản lý tài sản thanh lý | PATH=
+361: TT=109 | TEN=Khởi tạo yêu cầu thanh lý tài sản | PATH=http://localhost:4000/tai-san/thanh-ly
+365: TT=110 | TEN=Phê duyệt yêu cầu thanh lý tài sản | PATH=http://localhost:4000/tai-san/thanh-ly
+369: TT=111 | TEN=Cập nhật thông tin tài sản thanh lý | PATH=
+372: TT=112 | TEN=Xuất báo cáo thanh lý tài sản | PATH=http://localhost:4000/tai-san/thanh-ly
+375: TT=113 | TEN=Lưu trữ hồ sơ thanh lý tài sản | PATH=http://localhost:4000/tai-san/thanh-ly
+377: TT=114 | TEN=Theo dõi trạng thái thanh lý tài sản | PATH=http://localhost:4000/tai-san/thanh-ly
+380: TT=V.3. | TEN=Quản lý tài sản thanh hủy | PATH=
+381: TT=115 | TEN=Khởi tạo yêu cầu Thanh hủy tài sản | PATH=
+385: TT=116 | TEN=Phê duyệt yêu cầu Thanh hủy tài sản | PATH=
+389: TT=117 | TEN=Cập nhật thông tin tài sản Thanh hủy | PATH=
+392: TT=118 | TEN=Xuất báo cáo Thanh hủy tài sản | PATH=
+395: TT=119 | TEN=Lưu trữ hồ sơ Thanh hủy tài sản | PATH=
+397: TT=120 | TEN=Theo dõi trạng thái Thanh hủy tài sản | PATH=
+400: TT=V.4. | TEN=Quản lý kiểm kê tài sản | PATH=http://localhost:4000/tai-san/kiem-ke
+401: TT=121 | TEN=Lập kế hoạch kiểm kê tài sản | PATH=http://localhost:4000/tai-san/kiem-ke
+404: TT=122 | TEN=Tạo phiếu kiểm kê tài sản | PATH=http://localhost:4000/tai-san/kiem-ke
+407: TT=123 | TEN=Thực hiện kiểm kê tài sản thực địa | PATH=http://localhost:4000/tai-san/kiem-ke
+411: TT=124 | TEN=So sánh kết quả kiểm kê | PATH=http://localhost:4000/tai-san/kiem-ke
+414: TT=125 | TEN=Cập nhật dữ liệu sau kiểm kê | PATH=http://localhost:4000/tai-san/kiem-ke
+418: TT=126 | TEN=Báo cáo kết quả kiểm kê | PATH=http://localhost:4000/tai-san/kiem-ke
+421: TT=127 | TEN=Quản lý lịch sử kiểm kê | PATH=http://localhost:4000/tai-san/kiem-ke
+425: TT=128 | TEN=Đề xuất xử lý tài sản sau kiểm kê | PATH=
+429: TT=V.5. | TEN=Quản lý kho tài sản trên các tuyến | PATH=
+430: TT=129 | TEN=Khai báo kho tài sản trên tuyến | PATH=
+432: TT=130 | TEN=Danh mục tài sản thu hồi lưu kho | PATH=
+434: TT=131 | TEN=Cập nhật thông tin tài sản thu hồi theo từng tài sản | PATH=
+436: TT=132 | TEN=Cập nhật thông tin tài sản thu hồi đồng loạt | PATH=
+438: TT=133 | TEN=Hiển thị danh mục tài sản thu hồi lưu kho | PATH=
+440: TT=134 | TEN=Quản lý điều chuyển kho | PATH=
+442: TT=135 | TEN=Cập nhật thông tin tài sản chuyển kho theo từng tài sản | PATH=
+444: TT=136 | TEN=Cập nhật thông tin tài sản chuyển kho đồng loạt | PATH=
+446: TT=137 | TEN=Hiển thị danh mục tài sản đã chuyển kho | PATH=
+448: TT=138 | TEN=Tìm kiếm tài sản đã chuyển kho, truy xuất tình trạng | PATH=
+450: TT=139 | TEN=Báo cáo thống kê tài sản lưu kho, điều chuyển kho | PATH=
+452: TT=V.6. | TEN=Quản lý hợp đồng khai thác | PATH=
+453: TT=140 | TEN=Khai báo thông tin hợp đồng | PATH=
+456: TT=141 | TEN=Cập nhật thông tin hợp đồng | PATH=
+458: TT=142 | TEN=Tìm kiếm thông tin hợp đồng | PATH=
+460: TT=V.7. | TEN=Quản lý hồ sơ quản lý khai thác | PATH=
+461: TT=143 | TEN=Thêm mới hồ sơ tài liệu | PATH=
+464: TT=144 | TEN=Cập nhật thông tin hồ sơ | PATH=
+466: TT=145 | TEN=Tìm kiếm thông tin hồ sơ | PATH=
+469: TT=V.8 | TEN=Báo cáo và thống kê tài sản | PATH=
+470: TT=146 | TEN=Báo cáo tổng hợp tài sản | PATH=
+475: TT=D | TEN=Phân hệ Quản lý bảo trì, bảo dưỡng | PATH=
+476: TT=I | TEN=Lập kế hoạch bảo trì | PATH=http://localhost:4000/bao-tri/ke-hoach
+477: TT=147 | TEN=Lập kế hoạch bảo trì thường xuyên | PATH=http://localhost:4000/bao-tri/ke-hoach
+481: TT=148 | TEN=Lập kế hoạch sửa chữa định kỳ | PATH=
+485: TT=149 | TEN=Lập kế hoạch sửa chữa lớn | PATH=
+489: TT=150 | TEN=Lập kế hoạch sửa chữa đột xuất | PATH=
+493: TT=151 | TEN=Theo dõi thực hiện kế hoạch bảo trì | PATH=
+497: TT=II. | TEN=Quản lý kiểm tra tài sản | PATH=
+498: TT=152 | TEN=Lập kế hoạch kiểm tra và phân công công việc | PATH=
+503: TT=153 | TEN=Cập nhật thông tin kiểm tra | PATH=
+507: TT=154 | TEN=Tìm kiếm kết quả kiểm tra | PATH=
+511: TT=155 | TEN=Xem chi tiết kết quả kiểm tra | PATH=
+515: TT=156 | TEN=Tạo công việc xử lý sau kiểm tra | PATH=
+519: TT=157 | TEN=Cảnh báo tự động kết quả kiểm tra bất thường | PATH=
+524: TT=III. | TEN=Quản lý bảo trì, bảo dưỡng tài sản | PATH=
+525: TT=158 | TEN=Lập kế hoạch bảo trì, bảo dưỡng | PATH=http://localhost:4000/bao-tri/ke-hoach
+530: TT=159 | TEN=Cập nhật kết quả bảo trì | PATH=
+534: TT=160 | TEN=Tìm kiếm kết quả bảo trì | PATH=
+537: TT=161 | TEN=Xem chi tiết kết quả bảo trì | PATH=
+541: TT=162 | TEN=Tạo công việc xử lý sau bảo trì | PATH=
+545: TT=163 | TEN=Cảnh báo tự động kết quả bảo trì | PATH=
+550: TT=IV. | TEN=Quản lý sửa chữa tài sản | PATH=
+551: TT=164 | TEN=Lập kế hoạch sửa chữa tài sản | PATH=
+556: TT=165 | TEN=Cập nhật kết quả sửa chữa | PATH=
+559: TT=166 | TEN=Tìm kiếm kết quả sửa chữa | PATH=
+562: TT=167 | TEN=Xem chi tiết kết quả sửa chữa | PATH=
+566: TT=168 | TEN=Cảnh báo tự động kết quả sửa chữa | PATH=
+571: TT=V. | TEN=Báo cáo tổng hợp công tác bảo trì, bảo dưỡng tài sản | PATH=
+572: TT=169 | TEN=Báo cáo, tổng hợp dữ liệu bảo trì định kỳ | PATH=
+574: TT=170 | TEN=Báo cáo, tổng hợp tình trạng tài sản sau bảo trì | PATH=
+576: TT=171 | TEN=Báo cáo, tổng hợp dữ liệu hiệu suất bảo trì | PATH=
+578: TT=172 | TEN=Báo cáo, tổng hợp về sự cố và sửa chữa đột xuất | PATH=
+580: TT=173 | TEN=Tra cứu và xuất lịch sử bảo trì tài sản | PATH=
+582: TT=VI | TEN=Quản lý tiếp nhận và xử lý yêu cầu trong quản lý khai thác | PATH=
+583: TT=VI.1 | TEN=Quản lý tiếp nhận và xử lý yêu cầu | PATH=
+584: TT=174 | TEN=Khai báo yêu cầu từ khách hàng hoặc cán bộ quản lý vận hành | PATH=
+586: TT=175 | TEN=Phân loại và phân bổ yêu cầu cho đơn vị quản lý vận hành | PATH=
+590: TT=176 | TEN=Tạo và giao xử lý công việc cho cán bộ thực hiện | PATH=
+593: TT=177 | TEN=Cập nhật kết quả xử lý vào yêu cầu | PATH=
+595: TT=178 | TEN=Đóng yêu cầu sau khi xử lý hoàn thành | PATH=
+598: TT=179 | TEN=Thông báo trên phần mềm khi có sự cố gửi đến người dùng | PATH=http://localhost:4000/admin/thong-bao
+600: TT=180 | TEN=Theo dõi trạng thái và tiến độ xử lý yêu cầu | PATH=
+601: TT=VI.2 | TEN=Tra cứu và báo cáo | PATH=
+602: TT=181 | TEN=Tra cứu số liệu về các yêu cầu | PATH=
+604: TT=182 | TEN=Tra cứu số liệu về công việc | PATH=
+606: TT=F | TEN=Phân hệ Giám sát hoạt động vận hành và bảo trì, bảo dưỡng | PATH=
+607: TT=I. | TEN=Kiểm tra và đánh giá giám sát | PATH=
+608: TT=183 | TEN=Lập và phân công kế hoạch giám sát | PATH=
+610: TT=184 | TEN=Kiểm tra và đánh giá giám sát | PATH=
+612: TT=185 | TEN=Cập nhật kết quả đánh giá | PATH=
+613: TT=186 | TEN=Xem chi tiết kết quả đánh giá | PATH=
+614: TT=187 | TEN=Trao đổi, chỉ đạo thông tin | PATH=
+615: TT=188 | TEN=Tạo công việc để xử lý hạng mục sau sửa chữa | PATH=
+616: TT=189 | TEN=Gửi kết quả đánh giá | PATH=
+617: TT=190 | TEN=Báo cáo tổng hợp kết quả đánh giá, giám sát | PATH=
+618: TT=II | TEN=Đánh giá chấm điểm theo tiêu chuẩn TCVN/AASHTO | PATH=
+619: TT=191 | TEN=Chọn tiêu chuẩn đánh giá | PATH=
+623: TT=192 | TEN=Nhập dữ liệu kiểm tra hiện trường | PATH=
+628: TT=193 | TEN=Tính chỉ số IRI (TCVN 8863) | PATH=
+633: TT=194 | TEN=Thiết kế kết cấu áo đường mềm (TCVN 9437) | PATH=
+636: TT=195 | TEN=Chấm điểm PCI (Pavement Condition Index) | PATH=
+641: TT=196 | TEN=Chấm điểm BCI (Bridge Condition Index) | PATH=
+646: TT=197 | TEN=Phân loại và cảnh báo tự động | PATH=
+651: TT=198 | TEN=Hiển thị kết quả trên bản đồ | PATH=
+656: TT=199 | TEN=Gợi ý biện pháp xử lý kỹ thuật | PATH=
+659: TT=200 | TEN=Theo dõi thay đổi theo thời gian | PATH=
+663: TT=201 | TEN=Xuất báo cáo kết quả đánh giá | PATH=
+668: TT=202 | TEN=Tùy chỉnh trọng số đánh giá | PATH=

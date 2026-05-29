@@ -1,0 +1,41 @@
+Sheet names: ['trenweb', 'didong']
+
+--- trenweb (667 rows) ---
+     TT  ... Phân loại theo độ phức tạp
+0     A  ...                        NaN
+1     I  ...                        NaN
+2     1  ...                 Trung bình
+3   NaN  ...                        NaN
+4   NaN  ...                        NaN
+5   NaN  ...                        NaN
+6   NaN  ...                        NaN
+7     2  ...                   Đơn giản
+8   NaN  ...                        NaN
+9   NaN  ...                        NaN
+10  NaN  ...                        NaN
+11    3  ...                   Đơn giản
+12    4  ...                   Đơn giản
+13    5  ...                   Đơn giản
+14  NaN  ...                        NaN
+
+[15 rows x 6 columns]
+
+--- didong (103 rows) ---
+     TT  ... Phân loại theo độ phức tạp
+0     A  ...                        NaN
+1   203  ...                   Đơn giản
+2     B  ...                        NaN
+3   204  ...                   Đơn giản
+4   205  ...                   Đơn giản
+5   206  ...                   Đơn giản
+6   207  ...                   Đơn giản
+7   208  ...                   Đơn giản
+8   209  ...                   Đơn giản
+9   210  ...                   Đơn giản
+10  211  ...                   Đơn giản
+11  212  ...                   Đơn giản
+12  213  ...                   Đơn giản
+13  214  ...                   Đơn giản
+14  215  ...                   Đơn giản
+
+[15 rows x 6 columns]
