@@ -307,6 +307,7 @@ export const router = createBrowserRouter([
       // Quản trị vận hành - Tích hợp Quy định 742
       { path: "admin/chinh-sach-truy-cap", element: <AdminOperationList title="Chính sách truy cập" category="Quy định 742" icon={<Lock className="size-8 text-red-600" />} /> },
       { path: "admin/nhom-quyen", Component: NhomQuyenNguoiDung },
+      { path: "admin/phan-quyen-truy-cap", Component: NhomQuyenNguoiDung },
       { path: "admin/tai-khoan", element: <AdminOperationList title="Tài khoản người dùng" category="Quy định 742" icon={<Users className="size-8 text-slate-700" />} /> },
       { path: "admin/co-cau-to-chuc", element: <AdminOperationList title="Cơ cấu tổ chức" category="Quy định 742" icon={<Building2Icon className="size-8 text-slate-600" />} /> },
       { path: "admin/danh-muc-dia-phan", element: <AdminOperationList title="Danh mục địa phận" category="Quy định 742" icon={<Navigation className="size-8 text-teal-600" />} /> },
