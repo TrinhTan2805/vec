@@ -63,6 +63,7 @@ import RailwayInfrastructureList from "./pages/duong-sat/RailwayInfrastructureLi
 import AdminOperationList from "./pages/admin/AdminOperationList";
 import NotificationManagement from "./pages/admin/NotificationManagement";
 import UserManagement from "./pages/admin/UserManagement";
+import CauHinhChungHeThong from "./pages/admin/CauHinhChungHeThong";
 import Login from "./pages/auth/Login";
 import { Anchor, Navigation, Waves, Compass, Milestone, LifeBuoy, Ruler as RulerIcon, Route as RouteIcon, Building2 as Building2Icon, LandPlot as LandPlotIcon, Settings, ShieldCheck, Zap, Activity, UserCheck, RefreshCw, Code2, Users, Lock, History, AlertTriangle, FileText, Bell, LayoutDashboard, Map } from "lucide-react";
 import RealtimeTracking from "./pages/RealtimeTracking";
@@ -315,6 +316,10 @@ export const router = createBrowserRouter([
       { path: "admin/gui-log-api", element: <AdminOperationList title="Gửi log tập trung (API)" category="Quy định 742" icon={<Zap className="size-8 text-yellow-500" />} /> },
       { path: "admin/thong-bao", element: <NotificationManagement /> },
       { path: "admin/quan-ly-nguoi-dung", Component: UserManagement },
+      { path: "admin/cau-hinh-chung", Component: CauHinhChungHeThong },
+      { path: "admin/dang-nhap", Component: CauHinhChungHeThong },
+      { path: "admin/chinh-sach-mat-khau", Component: CauHinhChungHeThong },
+      { path: "admin/khoa-tai-khoan", Component: CauHinhChungHeThong },
 
       { path: "*", element: <NotFound /> },
     ],

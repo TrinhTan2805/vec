@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Outlet, Link, useLocation } from "react-router";
+
+declare const __APP_VERSION__: string | undefined;
+declare const __BUILD_TIME__: string | undefined;
 import {
   Menu,
   Home,
@@ -512,12 +515,11 @@ const adminNavItems: NavItem[] = [
         icon: <ShieldCheck className="size-4" />,
         children: [
           { title: "Quản lý người dùng", icon: <CircleDot className="size-3" />, href: "/admin/quan-ly-nguoi-dung" },
-          { title: "Quản lý cấu hình chung hệ thống", icon: <CircleDot className="size-3" />, href: "/admin/quan-ly-cau-hinh" },
+          { title: "Quản lý cấu hình chung hệ thống", icon: <CircleDot className="size-3" />, href: "/admin/cau-hinh-chung" },
           {
             title: "Xác thực người sử dụng",
             icon: <CircleDot className="size-3" />,
             children: [
-              { title: "Đăng nhập hệ thống", icon: <CircleDot className="size-3" />, href: "/admin/dang-nhap" },
               { title: "Thiết lập chính sách mật khẩu", icon: <CircleDot className="size-3" />, href: "/admin/chinh-sach-mat-khau" },
               { title: "Khóa tài khoản sau số lần đăng nhập sai", icon: <CircleDot className="size-3" />, href: "/admin/khoa-tai-khoan" },
             ]
@@ -678,6 +680,23 @@ export default function DashboardLayout() {
   // Get page title based on current route
   const getPageTitle = () => {
     const path = location.pathname;
+    const isConfigRoute = [
+      "/admin/cau-hinh-chung",
+      "/admin/dang-nhap",
+      "/admin/chinh-sach-mat-khau",
+      "/admin/khoa-tai-khoan"
+    ].includes(path);
+    if (isConfigRoute) {
+      return (
+        <span className="flex items-center gap-1.5 text-[13px] text-[#64748b] font-medium">
+          <span>Quản trị</span>
+          <span className="text-slate-300">/</span>
+          <span>Quản lý cấu hình chung hệ thống</span>
+          <span className="text-slate-300">/</span>
+          <span className="text-[16px] font-semibold text-[#020817]">Quản lý cấu hình chung hệ thống</span>
+        </span>
+      );
+    }
     switch (path) {
       case "/":
         return "Tổng quan hệ thống";
@@ -916,7 +935,16 @@ export default function DashboardLayout() {
               <Menu className="size-5" />
             </Button>
             <div className="flex-1">
-              <h2 className="text-lg font-semibold">{getPageTitle()}</h2>
+              {[
+                "/admin/cau-hinh-chung",
+                "/admin/dang-nhap",
+                "/admin/chinh-sach-mat-khau",
+                "/admin/khoa-tai-khoan"
+              ].includes(location.pathname) ? (
+                getPageTitle()
+              ) : (
+                <h2 className="text-lg font-semibold">{getPageTitle()}</h2>
+              )}
             </div>
             <div className="flex items-center gap-2">
               <NotificationDropdown />
