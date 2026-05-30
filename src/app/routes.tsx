@@ -85,6 +85,8 @@ import CauHinhDichVu from './pages/admin/integration/CauHinhDichVu';
 import DataSharingServiceDoc from './pages/admin/integration/DataSharingServiceDoc';
 import NotFound from './pages/NotFound';
 import GenericDashboard from './pages/dashboard/GenericDashboard';
+import MapConfig from './pages/admin/map/MapConfig';
+import MapChange from './pages/admin/map/MapChange';
 const loaiPhanAnhItems = [
   { id: "1", code: "LPA-001", name: "Hư hỏng mặt đường", description: "Mặt đường bị nứt nẻ, ổ gà, bong tróc", file: null },
   { id: "2", code: "LPA-002", name: "Vết nứt kết cấu", description: "Vết nứt trên cầu, hầm, dầm, trụ", file: "Quy_trinh_LPA002.pdf" },
@@ -349,6 +351,8 @@ export const router = createBrowserRouter([
       { path: "admin/dang-nhap", Component: CauHinhChungHeThong },
       { path: "admin/chinh-sach-mat-khau", Component: ChinhSachMatKhau },
       { path: "admin/khoa-tai-khoan", Component: CauHinhChungHeThong },
+      { path: "assets/map/config", Component: MapConfig },
+      { path: "assets/map/change", Component: MapChange },
       { path: "admin/dm-phan-quyen", Component: DanhMucPhanQuyen },
       { path: "admin/dm-tinh", Component: DanhMucTinh },
       { path: "admin/dm-xa", element: <GenericCategoryManagement title="Quản lý danh mục địa phận xã" itemLabel="địa phận xã" /> },

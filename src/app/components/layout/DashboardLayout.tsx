@@ -589,7 +589,8 @@ const adminNavItems: NavItem[] = [
             ]
           }
         ]
-      }
+      },
+
     ]
   }
 ];
