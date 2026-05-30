@@ -83,7 +83,8 @@ import QuanLyDichVu from './pages/admin/integration/QuanLyDichVu';
 import GiamSatDichVu from './pages/admin/integration/GiamSatDichVu';
 import CauHinhDichVu from './pages/admin/integration/CauHinhDichVu';
 import DataSharingServiceDoc from './pages/admin/integration/DataSharingServiceDoc';
-import NotFound from "./pages/NotFound";
+import NotFound from './pages/NotFound';
+import GenericDashboard from './pages/dashboard/GenericDashboard';
 const loaiPhanAnhItems = [
   { id: "1", code: "LPA-001", name: "Hư hỏng mặt đường", description: "Mặt đường bị nứt nẻ, ổ gà, bong tróc", file: null },
   { id: "2", code: "LPA-002", name: "Vết nứt kết cấu", description: "Vết nứt trên cầu, hầm, dầm, trụ", file: "Quy_trinh_LPA002.pdf" },
@@ -120,6 +121,21 @@ export const router = createBrowserRouter([
     children: [
       { index: true, Component: OverviewPage },
       { path: "ban-do", Component: Dashboard },
+      // Dashboard Routes
+      { path: "dashboard/asset-count", Component: GenericDashboard },
+      { path: "dashboard/asset-profile", Component: GenericDashboard },
+      { path: "dashboard/inventory-activity", Component: GenericDashboard },
+      { path: "dashboard/liquidate-alert", Component: GenericDashboard },
+      { path: "dashboard/liquidated-assets", Component: GenericDashboard },
+      { path: "dashboard/maintain-alert", Component: GenericDashboard },
+      { path: "dashboard/maintain-progress", Component: GenericDashboard },
+      { path: "dashboard/periodic-maintain", Component: GenericDashboard },
+      { path: "dashboard/repair-status", Component: GenericDashboard },
+      { path: "dashboard/maintain-performance", Component: GenericDashboard },
+      { path: "dashboard/inspect-activity", Component: GenericDashboard },
+      { path: "dashboard/inspect-alert", Component: GenericDashboard },
+      { path: "dashboard/feedback", Component: GenericDashboard },
+      { path: "dashboard/incident-trend", Component: GenericDashboard },
       // Quản lý hạ tầng
       { path: "quan-ly-ha-tang", Component: QuanLyHaTang },
       { path: "quan-ly-du-an", Component: ProjectManagement },
@@ -410,7 +426,8 @@ export const router = createBrowserRouter([
           { id: "3", code: "LTS.03", name: "Lớp thiết bị ITS", description: "Camera, VMS, hệ thống cân tải trọng" }
         ]} />
       },
-      { path: "admin/quan-ly-dich-vu", Component: QuanLyDichVu },
+
+      { path: "admin/quan-ly-dich-vu", Component: QuanLyDichVu },
       { path: "admin/giam-sat-dich-vu", Component: GiamSatDichVu },
       { path: "admin/cau-hinh-dich-vu", Component: CauHinhDichVu },
       { path: "admin/dv-tong-hop-tai-san", element: <DataSharingServiceDoc title="Dịch vụ dữ liệu tổng hợp tài sản" description="Cung cấp dịch vụ tổng hợp tài sản theo loại tài sản, theo tuyến đường, theo đơn vị quản lý." endpoint="/v1/assets/summary" method="GET" params={[{ name: "type", type: "string", required: false, description: "Loại tài sản (Bê tông nhựa, Biển báo, ITS...)" }, { name: "route", type: "string", required: false, description: "Mã tuyến đường (VD: CH.01)" }]} responseSample={'{\n  "success": true,\n  "data": {\n    "total": 1250,\n    "items": [\n      { "id": "AS.001", "name": "Biển báo tốc độ 100", "status": "Tốt" }\n    ]\n  }\n}'} /> },
