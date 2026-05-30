@@ -809,7 +809,7 @@ export default function CauHinhChungHeThong() {
                   >
                     Trước
                   </button>
-                  <button className="px-3 py-1 bg-blue-600 text-white rounded font-semibold shadow-xs">
+                  <button aria-label="Button" className="px-3 py-1 bg-blue-600 text-white rounded font-semibold shadow-xs">
                     1
                   </button>
                   <button

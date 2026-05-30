@@ -75,6 +75,14 @@ import TrafficHeatmap from "./pages/TrafficHeatmap";
 import TrafficStatistics from "./pages/TrafficStatistics";
 import GiayPhepDaoDuong from "./pages/cap-phep/GiayPhepDaoDuong";
 import SystemConfig from "./pages/SystemConfig";
+import DanhMucPhanQuyen from "./pages/admin/DanhMucPhanQuyen";
+import DanhMucTinh from "./pages/admin/DanhMucTinh";
+import GenericCategoryManagement from "./pages/admin/GenericCategoryManagement";
+import DanhMucTaiSan from './pages/admin/DanhMucTaiSan';
+import QuanLyDichVu from './pages/admin/integration/QuanLyDichVu';
+import GiamSatDichVu from './pages/admin/integration/GiamSatDichVu';
+import CauHinhDichVu from './pages/admin/integration/CauHinhDichVu';
+import DataSharingServiceDoc from './pages/admin/integration/DataSharingServiceDoc';
 import NotFound from "./pages/NotFound";
 const loaiPhanAnhItems = [
   { id: "1", code: "LPA-001", name: "Hư hỏng mặt đường", description: "Mặt đường bị nứt nẻ, ổ gà, bong tróc", file: null },
@@ -202,14 +210,14 @@ export const router = createBrowserRouter([
       // Quản lý đường thủy nội địa
       { path: "duong-thuy/tuyen", element: <WaterwayInfrastructureList title="Tuyến đường thủy nội địa" category="Kết cấu hạ tầng đường thủy" icon={<Waves className="size-8 text-blue-600" />} /> },
       { path: "duong-thuy/nhanh-luong", element: <WaterwayInfrastructureList title="Nhánh của Luồng chạy tàu thuyền" category="Kết cấu hạ tầng đường thủy" icon={<Navigation className="size-8 text-blue-500" />} /> },
-      
+
       // Quản lý báo hiệu đường thủy nội địa
       { path: "duong-thuy/bien-bao", element: <WaterwayInfrastructureList title="Biển báo đường thủy" category="Báo hiệu đường thủy" icon={<Milestone className="size-8 text-orange-500" />} /> },
       { path: "duong-thuy/den-hieu", element: <WaterwayInfrastructureList title="Đèn hiệu đường thủy" category="Báo hiệu đường thủy" icon={<Compass className="size-8 text-yellow-500" />} /> },
       { path: "duong-thuy/cot-bien-bao", element: <WaterwayInfrastructureList title="Cột biển báo đường thủy" category="Báo hiệu đường thủy" icon={<Milestone className="size-8 text-slate-500" />} /> },
       { path: "duong-thuy/phao", element: <WaterwayInfrastructureList title="Phao" category="Báo hiệu đường thủy" icon={<LifeBuoy className="size-8 text-red-500" />} /> },
       { path: "duong-thuy/cot-thuy-chi", element: <WaterwayInfrastructureList title="Cột thủy chí" category="Báo hiệu đường thủy" icon={<RulerIcon className="size-8 text-teal-600" />} /> },
-      
+
       // Công trình phụ trợ khác
       { path: "duong-thuy/phu-tro-khac", element: <WaterwayInfrastructureList title="Công trình phụ trợ khác" category="Hạ tầng đường thủy" icon={<Anchor className="size-8 text-slate-400" />} /> },
 
@@ -282,7 +290,7 @@ export const router = createBrowserRouter([
 
       // I.3.5 Dữ liệu danh mục Công trình Hạ tầng vận tải đường bộ
       { path: "danh-muc/ha-tang-van-tai/loai", element: <CategoryList title="Loại hạ tầng vận tải" categoryGroup="HT vận tải" /> },
-      
+
       // II.2 Dữ liệu danh mục kết cấu hạ tầng đường thủy
       { path: "danh-muc/duong-thuy/loai", element: <CategoryList title="Loại đường thủy nội địa" categoryGroup="Danh mục đường thủy" /> },
       { path: "danh-muc/duong-thuy/cap", element: <CategoryList title="Cấp đường thủy nội địa" categoryGroup="Danh mục đường thủy" /> },
@@ -292,7 +300,7 @@ export const router = createBrowserRouter([
       { path: "danh-muc/duong-thuy/loai-phao", element: <CategoryList title="Loại phao" categoryGroup="Danh mục đường thủy" /> },
       { path: "danh-muc/duong-thuy/loai-phu-tro-khac", element: <CategoryList title="Loại công trình phụ trợ khác" categoryGroup="Danh mục đường thủy" /> },
 
-      
+
       // I.4 Quản lý theo bình đồ
       { path: "binh-do/doan-duong", element: <RoadSectionPlan /> },
       { path: "binh-do/cau-lon", element: <BridgePlan /> },
@@ -325,6 +333,90 @@ export const router = createBrowserRouter([
       { path: "admin/dang-nhap", Component: CauHinhChungHeThong },
       { path: "admin/chinh-sach-mat-khau", Component: ChinhSachMatKhau },
       { path: "admin/khoa-tai-khoan", Component: CauHinhChungHeThong },
+      { path: "admin/dm-phan-quyen", Component: DanhMucPhanQuyen },
+      { path: "admin/dm-tinh", Component: DanhMucTinh },
+      { path: "admin/dm-xa", element: <GenericCategoryManagement title="Quản lý danh mục địa phận xã" itemLabel="địa phận xã" /> },
+      { path: "admin/dm-phong-ban", element: <GenericCategoryManagement title="Quản lý danh mục phòng ban, trung tâm VEC" itemLabel="phòng ban" /> },
+      {
+        path: "admin/dm-tuyen-cao-toc", element: <GenericCategoryManagement title="Quản lý danh mục các tuyến cao tốc do VEC quản lý" itemLabel="tuyến cao tốc" initialData={[
+          { id: "1", code: "CH.01", name: "Cao tốc Hà Nội - Hải Phòng", description: "Tuyến đường bộ cao tốc Hà Nội - Hải Phòng" },
+          { id: "2", code: "CH.02", name: "Cao tốc Nội Bài - Lào Cai", description: "Tuyến đường bộ cao tốc Nội Bài - Lào Cai" },
+          { id: "3", code: "CH.03", name: "Cao tốc Cầu Giẽ - Ninh Bình", description: "Tuyến đường bộ cao tốc Cầu Giẽ - Ninh Bình" }
+        ]} />
+      },
+      {
+        path: "admin/dm-don-vi", element: <GenericCategoryManagement key="dm-don-vi" title="Quản lý danh mục các đơn vị quản lý, khai thác, giám sát trên các tuyến" itemLabel="đơn vị" initialData={[
+          { id: "1", code: "DV.01", name: "Đơn vị quản lý tuyến CT-HN", description: "Đơn vị quản lý tuyến cao tốc Hà Nội" },
+          { id: "2", code: "DV.02", name: "Đơn vị quản lý tuyến CT-HP", description: "Đơn vị quản lý tuyến cao tốc Hải Phòng" }
+        ]} />
+      },
+      { path: "admin/dm-tai-san", Component: DanhMucTaiSan },
+      {
+        path: "admin/dm-thiet-bi", element: <GenericCategoryManagement key="dm-thiet-bi" title="Quản lý danh mục thiết bị (thiết bị văn phòng, thiết bị CNTT và các thiết bị khác)" itemLabel="thiết bị" initialData={[
+          { id: "1", code: "TB.01", name: "Máy in", description: "Máy in văn phòng" },
+          { id: "2", code: "TB.02", name: "Máy tính", description: "Máy tính để bàn / Laptop" },
+          { id: "3", code: "TB.03", name: "Tivi", description: "Tivi màn hình lớn" },
+          { id: "4", code: "TB.04", name: "Máy chủ", description: "Máy chủ trung tâm dữ liệu" },
+          { id: "5", code: "TB.05", name: "Router", description: "Thiết bị định tuyến mạng" }
+        ]} />
+      },
+      {
+        path: "admin/dm-kho", element: <GenericCategoryManagement key="dm-kho" title="Quản lý danh mục kho vật lý" itemLabel="kho" initialData={[
+          { id: "1", code: "KHO.01", name: "Kho HN-HP", description: "Kho vật lý tuyến Hà Nội - Hải Phòng" },
+          { id: "2", code: "KHO.02", name: "Kho HN-BG", description: "Kho vật lý tuyến Hà Nội - Bắc Giang" },
+          { id: "3", code: "KHO.03", name: "Kho HN-NB", description: "Kho vật lý tuyến Hà Nội - Ninh Bình" }
+        ]} />
+      },
+      {
+        path: "admin/dm-ho-so-tai-san", element: <GenericCategoryManagement key="dm-ho-so" title="Quản lý danh mục hồ sơ tài sản đường cao tốc" itemLabel="hồ sơ" initialData={[
+          { id: "1", code: "HS.01", name: "Hồ sơ hoàn công", description: "Tài liệu hoàn công công trình" },
+          { id: "2", code: "HS.02", name: "Hồ sơ thí nghiệm", description: "Biên bản, kết quả thí nghiệm vật liệu" },
+          { id: "3", code: "HS.03", name: "Hồ sơ mặt cắt", description: "Bản vẽ mặt cắt ngang, mặt cắt dọc" },
+          { id: "4", code: "HS.04", name: "Hồ sơ cống ngầm", description: "Hồ sơ thiết kế, thi công cống ngầm" }
+        ]} />
+      },
+      {
+        path: "admin/dm-danh-gia-bao-tri", element: <GenericCategoryManagement key="dm-danh-gia-bao-tri" title="Quản lý danh mục đánh giá bảo trì" itemLabel="danh mục" initialData={[
+          { id: "1", code: "BT.01", name: "Phát hiện kịp thời", description: "Phát hiện các hư hỏng, bất thường trên tuyến" },
+          { id: "2", code: "BT.02", name: "Kịp thời", description: "Thực hiện bảo trì đúng thời gian quy định" },
+          { id: "3", code: "BT.03", name: "Hiệu quả ", description: "Đánh giá hiệu quả của công tác bảo trì" }
+        ]} />
+      },
+      {
+        path: "admin/dm-danh-gia-sua-chua", element: <GenericCategoryManagement key="dm-danh-gia-sua-chua" title="Quản lý danh mục đánh giá sửa chữa" itemLabel="danh mục" initialData={[
+          { id: "1", code: "SC.01", name: "Kịp thời", description: "Thời gian xử lý khắc phục sự cố" },
+          { id: "2", code: "SC.02", name: "Hiệu quả", description: "Đảm bảo hồ sơ, tài liệu đầy đủ và đúng quy định" },
+          { id: "3", code: "SC.03", name: "Tiến độ", description: "Thời gian xử lý khắc phục sự cố" }
+        ]} />
+      },
+      {
+        path: "admin/dm-tieu-chi-van-hanh", element: <GenericCategoryManagement key="dm-tieu-chi-van-hanh" title="Quản lý danh mục tiêu chí đánh giá vận hành" itemLabel="tiêu chí" initialData={[
+          { id: "1", code: "VH.01", name: "Phản ứng nhanh", description: "Thời gian trung bình tiếp cận hiện trường sự cố" },
+          { id: "2", code: "VH.02", name: "Xử lý vi phạm ETC", description: "Tỷ lệ nhận diện và xử lý xe vượt trạm thu phí không dừng" },
+          { id: "3", code: "VH.03", name: "Thông suốt giao thông", description: "Đánh giá phương án phân luồng khi có tai nạn" }
+        ]} />
+      },
+      {
+        path: "admin/dm-so-do-mat-bang", element: <GenericCategoryManagement key="dm-so-do-mat-bang" title="Quản lý danh mục mục sơ đồ mặt bằng" itemLabel="sơ đồ" initialData={[
+          { id: "1", code: "MB.01", name: "Trạm thu phí", description: "Sơ đồ bố trí làn thu phí, barier, cabin" },
+          { id: "2", code: "MB.02", name: "Trạm dừng nghỉ", description: "Khu vực bãi đỗ xe, nhà vệ sinh, trạm xăng" },
+          { id: "3", code: "MB.03", name: "Nút giao khác mức", description: "Sơ đồ các nhánh ram ra/vào đường cao tốc" }
+        ]} />
+      },
+      {
+        path: "admin/dm-lop-tai-san", element: <GenericCategoryManagement key="dm-lop-tai-san" title="Quản lý danh mục của các lớp tài sản" itemLabel="lớp tài sản" initialData={[
+          { id: "1", code: "LTS.01", name: "Lớp kết cấu mặt đường", description: "Lớp bê tông nhựa tạo nhám, lớp móng" },
+          { id: "2", code: "LTS.02", name: "Lớp công trình cầu hầm", description: "Dầm cầu, mố trụ, kết cấu vỏ hầm" },
+          { id: "3", code: "LTS.03", name: "Lớp thiết bị ITS", description: "Camera, VMS, hệ thống cân tải trọng" }
+        ]} />
+      },
+      { path: "admin/quan-ly-dich-vu", Component: QuanLyDichVu },
+      { path: "admin/giam-sat-dich-vu", Component: GiamSatDichVu },
+      { path: "admin/cau-hinh-dich-vu", Component: CauHinhDichVu },
+      { path: "admin/dv-tong-hop-tai-san", element: <DataSharingServiceDoc title="Dịch vụ dữ liệu tổng hợp tài sản" description="Cung cấp dịch vụ tổng hợp tài sản theo loại tài sản, theo tuyến đường, theo đơn vị quản lý." endpoint="/v1/assets/summary" method="GET" params={[{ name: "type", type: "string", required: false, description: "Loại tài sản (Bê tông nhựa, Biển báo, ITS...)" }, { name: "route", type: "string", required: false, description: "Mã tuyến đường (VD: CH.01)" }]} responseSample={'{\n  "success": true,\n  "data": {\n    "total": 1250,\n    "items": [\n      { "id": "AS.001", "name": "Biển báo tốc độ 100", "status": "Tốt" }\n    ]\n  }\n}'} /> },
+      { path: "admin/dv-chi-tiet-tai-san", element: <DataSharingServiceDoc title="Dịch vụ dữ liệu chi tiết tài sản" description="Cung cấp dịch vụ chi tiết tài sản theo loại tài sản, theo tuyến đường, theo đơn vị quản lý, danh sách trường thông tin." endpoint="/v1/assets/details/{id}" method="GET" params={[{ name: "id", type: "string", required: true, description: "Mã tài sản cần tra cứu chi tiết" }]} responseSample={'{\n  "success": true,\n  "data": {\n    "id": "AS.001",\n    "name": "Biển báo tốc độ 100",\n    "location": "Km 12+500",\n    "installedAt": "2024-01-15"\n  }\n}'} /> },
+      { path: "admin/dv-bao-tri-dinh-ky", element: <DataSharingServiceDoc title="Dịch vụ dữ liệu bảo trì định kỳ" description="Cung cấp dịch vụ dữ liệu bảo trì định kỳ theo tuyến đường, đơn vị quản lý, thời gian, phân loại, tình trạng xử lý." endpoint="/v1/maintenance/schedule" method="GET" params={[{ name: "status", type: "string", required: false, description: "Tình trạng (Đang xử lý, Đã hoàn thành)" }, { name: "dateRange", type: "string", required: false, description: "Khoảng thời gian (YYYY-MM-DD,YYYY-MM-DD)" }]} responseSample={'{\n  "success": true,\n  "data": [\n    {\n      "taskId": "MT.2026.01",\n      "title": "Bảo dưỡng VMS Km 15",\n      "status": "Đang xử lý"\n    }\n  ]\n}'} /> },
+      { path: "admin/dv-yeu-cau", element: <DataSharingServiceDoc title="Dịch vụ dữ liệu các yêu cầu theo thời gian, loại yêu cầu" description="Cung cấp Dịch vụ dữ liệu các yêu cầu theo thời gian, loại yêu cầu." endpoint="/v1/requests" method="GET" params={[{ name: "type", type: "string", required: true, description: "Loại yêu cầu (Sửa chữa, Hỗ trợ...)" }]} responseSample={'{\n  "success": true,\n  "data": [\n    {\n      "reqId": "REQ.009",\n      "type": "Hỗ trợ",\n      "content": "Xe hỏng lốp tại Km 20"\n    }\n  ]\n}'} /> },
 
       { path: "*", element: <NotFound /> },
     ],

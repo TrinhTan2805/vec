@@ -96,6 +96,7 @@ interface NavItem {
   href?: string;
   children?: NavItem[];
   isSearchMatch?: boolean;
+  defaultExpanded?: boolean;
 }
 
 const roadNavItems: NavItem[] = [
@@ -509,10 +510,12 @@ const adminNavItems: NavItem[] = [
   {
     title: "Phân hệ quản trị hệ thống",
     icon: <Settings className="size-5 text-slate-600" />,
+    defaultExpanded: true,
     children: [
       {
         title: "Modules Quản trị hệ thống",
         icon: <ShieldCheck className="size-4" />,
+        defaultExpanded: true,
         children: [
           { title: "Quản lý người dùng", icon: <CircleDot className="size-3" />, href: "/admin/quan-ly-nguoi-dung" },
           { title: "Quản lý cấu hình chung hệ thống", icon: <CircleDot className="size-3" />, href: "/admin/cau-hinh-chung" },
@@ -601,7 +604,7 @@ const moduleNavItems = {
 };
 
 function NavItemComponent({ item, level = 0 }: { item: NavItem; level?: number }) {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(!!item.defaultExpanded);
   const location = useLocation();
 
   React.useEffect(() => {
@@ -626,8 +629,8 @@ function NavItemComponent({ item, level = 0 }: { item: NavItem; level?: number }
         </button>
         {isOpen && (
           <div className="mt-1 space-y-1 border-l ml-5 pl-1 border-slate-200/50">
-            {item.children.map((child, index) => (
-              <NavItemComponent key={index} item={child} level={level + 1} />
+            {item.children.map((child) => (
+              <NavItemComponent key={child.title} item={child} level={level + 1} />
             ))}
           </div>
         )}
@@ -677,198 +680,47 @@ export default function DashboardLayout() {
     return filterNodes(currentNavItems);
   }, [menuSearchQuery, activeModule]);
 
+  const findBreadcrumbPath = (items: NavItem[], targetPath: string, currentPath: string[] = []): string[] | null => {
+    for (const item of items) {
+      if (item.href && (targetPath === item.href || targetPath.startsWith(item.href + '/'))) {
+        return [...currentPath, item.title];
+      }
+      if (item.children) {
+        const found = findBreadcrumbPath(item.children, targetPath, [...currentPath, item.title]);
+        if (found) return found;
+      }
+    }
+    return null;
+  };
+
   // Get page title based on current route
   const getPageTitle = (): React.ReactNode => {
     const path = location.pathname;
-    switch (path) {
-      case "/":
-        return "Tổng quan hệ thống";
-      case "/ban-do":
-        return "Bản đồ số giao thông";
-      case "/quan-ly-ha-tang":
-        return "Giao thông đường bộ";
-      case "/quan-ly-du-an":
-        return "Quản lý dự án giao thông";
-      case "/bao-ve-ha-tang":
-        return "Quản lý phản ánh, xử lý sự cố, vi phạm";
-    }
+    const rootTitle = activeModule === "ADMIN" ? "Quản trị" : "Nghiệp vụ";
+    const currentNavItems = moduleNavItems[activeModule];
     
-    // Custom admin breadcrumbs trails
-    if (path.includes("admin/nhat-ky-hoat-dong") || path.includes("admin/lich-su-loi")) {
-      return (
-        <div className="flex items-center gap-1.5 text-[14px] font-semibold text-slate-500">
-          <span>Quản trị</span>
-          <span className="text-slate-350">|</span>
-          <span>Module Quản trị hệ thống</span>
-          <span className="text-slate-350">|</span>
-          <span>Kiểm soát truy cập</span>
-          <span className="text-slate-350">|</span>
-          <span className="text-slate-900 font-bold">Quản lý nhật ký hoạt động</span>
-        </div>
-      );
+    if (path === "/") {
+      return "Tổng quan hệ thống";
     }
-    if (path.includes("admin/phan-quyen-truy-cap") || path.includes("admin/nhom-quyen")) {
+
+    const trail = findBreadcrumbPath(currentNavItems, path, [rootTitle]);
+
+    if (trail && trail.length > 0) {
       return (
         <div className="flex items-center gap-1.5 text-[14px] font-semibold text-slate-500">
-          <span>Quản trị</span>
-          <span className="text-slate-350">|</span>
-          <span>Module Quản trị hệ thống</span>
-          <span className="text-slate-350">|</span>
-          <span>Kiểm soát truy cập</span>
-          <span className="text-slate-350">|</span>
-          <span className="text-slate-900 font-bold">Phân quyền truy cập</span>
-        </div>
-      );
-    }
-    if (path.includes("admin/timeout")) {
-      return (
-        <div className="flex items-center gap-1.5 text-[14px] font-semibold text-slate-500">
-          <span>Quản trị</span>
-          <span className="text-slate-350">|</span>
-          <span>Module Quản trị hệ thống</span>
-          <span className="text-slate-350">|</span>
-          <span>Kiểm soát truy cập</span>
-          <span className="text-slate-350">|</span>
-          <span className="text-slate-900 font-bold">Quản lý thời gian chờ (Timeout)</span>
-        </div>
-      );
-    }
-    if (path.includes("admin/chinh-sach-mat-khau")) {
-      return (
-        <div className="flex items-center gap-1.5 text-[14px] font-semibold text-slate-500">
-          <span>Quản trị</span>
-          <span className="text-slate-350">|</span>
-          <span>Module Quản trị hệ thống</span>
-          <span className="text-slate-350">|</span>
-          <span>Xác thực người sử dụng</span>
-          <span className="text-slate-350">|</span>
-          <span className="text-slate-900 font-bold">Thiết lập chính sách mật khẩu</span>
-        </div>
-      );
-    }
-    if (path.includes("admin/khoa-tai-khoan")) {
-      return (
-        <div className="flex items-center gap-1.5 text-[14px] font-semibold text-slate-500">
-          <span>Quản trị</span>
-          <span className="text-slate-350">|</span>
-          <span>Module Quản trị hệ thống</span>
-          <span className="text-slate-350">|</span>
-          <span>Xác thực người sử dụng</span>
-          <span className="text-slate-350">|</span>
-          <span className="text-slate-900 font-bold">Khóa tài khoản sau số lần đăng nhập sai</span>
-        </div>
-      );
-    }
-    if (path.includes("admin/cau-hinh-chung")) {
-      return (
-        <div className="flex items-center gap-1.5 text-[14px] font-semibold text-slate-500">
-          <span>Quản trị</span>
-          <span className="text-slate-350">|</span>
-          <span>Module Quản trị hệ thống</span>
-          <span className="text-slate-350">|</span>
-          <span className="text-slate-900 font-bold">Quản lý cấu hình chung hệ thống</span>
-        </div>
-      );
-    }
-    if (path.includes("admin/quan-ly-nguoi-dung") || path.includes("admin/tai-khoan")) {
-      return (
-        <div className="flex items-center gap-1.5 text-[14px] font-semibold text-slate-500">
-          <span>Quản trị</span>
-          <span className="text-slate-350">|</span>
-          <span>Module Quản trị hệ thống</span>
-          <span className="text-slate-350">|</span>
-          <span className="text-slate-900 font-bold">Quản lý người dùng</span>
+          {trail.map((t, i) => (
+            <React.Fragment key={i}>
+              {i > 0 && <span className="text-slate-350">|</span>}
+              <span className={i === trail.length - 1 ? "text-slate-900 font-bold" : ""}>{t}</span>
+            </React.Fragment>
+          ))}
         </div>
       );
     }
 
-    if (path.includes("duong-bo/tuyen")) return "Quản lý Tuyến Đường Bộ";
-    if (path.includes("duong-bo/doan-dia-phan")) return "Quản lý Đoạn đường theo địa phận";
-    if (path.includes("duong-bo/doan-mat-cat")) return "Quản lý Đoạn đường theo mặt cắt";
-    if (path.includes("cau/lon")) return "Quản lý Cầu Lớn";
-    if (path.includes("cau/nho-trung")) return "Quản lý Cầu nhỏ, trung";
-    if (path.includes("cau/vuot-nhe")) return "Quản lý Cầu vượt nhẹ";
-    if (path.includes("cau/di-bo")) return "Quản lý Cầu đi bộ";
-    if (path.includes("ham")) return "Quản lý Hầm Đường Bộ";
-    if (path.includes("duong-ngang")) return "Quản lý Đường Ngang";
-    if (path.includes("nut-giao")) return "Quản lý Nút Giao";
-    if (path.includes("hanh-lang-an-toan")) return "Quản lý Hành Lang An Toàn";
-    if (path.includes("phu-tro/ho-ga")) return "Quản lý Hố Ga";
-    if (path.includes("phu-tro/bien-bao")) return "Quản lý Báo Hiệu Đường Bộ";
-    if (path.includes("phu-tro/an-toan")) return "Quản lý Công Trình An Toàn";
-    if (path.includes("phu-tro/thoat-nuoc")) return "Quản lý Hệ Thống Thoát Nước";
-    if (path.includes("phu-tro/cot-km")) return "Quản lý Cột Km";
-    if (path.includes("phu-tro/coc-h")) return "Quản lý Cọc H";
-    if (path.includes("phu-tro/cong")) return "Quản lý Cống";
-    if (path.includes("phu-tro/loi-re")) return "Quản lý Lối rẽ";
-    if (path.includes("phu-tro/ke")) return "Quản lý Kè";
-    if (path.includes("phu-tro/ranh-nuoc")) return "Quản lý Rãnh nước";
-    if (path.includes("phu-tro/dai-phan-cach")) return "Quản lý Dải phân cách";
-    if (path.includes("phu-tro/lan-can")) return "Quản lý Lan can phòng hộ";
-    if (path.includes("phu-tro/coc-tieu")) return "Quản lý Đoạn cọc tiêu";
-    if (path.includes("phu-tro/vach-ke")) return "Quản lý Vạch kẻ đường";
-    if (path.includes("phu-tro/gia-long-mon")) return "Quản lý Giá long môn";
-    if (path.includes("phu-tro/cot-can-vuon")) return "Quản lý Cột cần vươn";
-    if (path.includes("phu-tro/dinh-phan-quang")) return "Quản lý Đinh phản quang";
-    if (path.includes("cong-nghe/den-tin-hieu")) return "Quản lý Đèn tín hiệu giao thông";
-    if (path.includes("cong-nghe/camera")) return "Quản lý Camera giao thông";
-    if (path.includes("cong-nghe/vms")) return "Quản lý Biển điện tử VMS";
-    if (path.includes("dau-noi")) return "Quản lý Đấu nối";
-    if (path.includes("ha-tang-van-tai")) return "Quản lý Hạ tầng vận tải đường bộ";
-    if (path.includes("duy-tu/sua-chua-mat-duong")) return "Sửa chữa mặt đường bộ";
-    if (path.includes("duy-tu/sua-chua-cau-lon")) return "Sửa chữa mặt đường cầu lớn";
-    if (path.includes("duy-tu/cau-ham")) return "Quản lý duy tu Nhóm Công trình Cầu & Hầm";
-    if (path.includes("duy-tu/ket-cau-phu-tro")) return "Quản lý duy tu Nhóm Kết cấu Đường bộ & Phụ trợ";
-    if (path.includes("duy-tu/bao-hieu-chi-dan")) return "Quản lý duy tu Nhóm Hệ thống Báo hiệu & Chỉ dẫn";
-    if (path.includes("duy-tu/tin-hieu-camera")) return "Quản lý duy tu Nhóm Hệ thống Đèn tín hiệu & Camera";
-    if (path.includes("duy-tu/giao-cat-khac")) return "Quản lý duy tu Nhóm Giao cắt & Công trình khác";
-    if (path.includes("duy-tu/phu-tro")) return "Quản lý duy tu các công trình phụ trợ";
-    if (path.includes("duy-tu/ban-giao-xdcb")) return "Quản lý đoạn đường bộ bàn giao thi công XDCB";
-    if (path.includes("bao-ve/tuan-tra")) return "Thiết lập tuần tra bảo vệ KCHT giao thông";
-    if (path.includes("bao-ve/kiem-tra-kcht")) return "Công tác kiểm tra, bảo vệ KCHT giao thông";
-    if (path.includes("bao-ve-ha-tang")) return "Quản lý phản ánh, xử lý sự cố, vi phạm";
-    if (path.includes("bao-tri")) return "Bảo trì bảo dưỡng";
-    if (path.includes("danh-muc/loai-phan-anh")) return "Quy định danh mục loại phản ánh";
-    if (path.includes("danh-muc/muc-do-su-co")) return "Quy định danh mục mức độ sự cố";
-    if (path.includes("danh-muc/nguyen-nhan-su-co")) return "Quy định danh mục nguyên nhân sự cố";
-    if (path.includes("danh-muc")) return "Quản lý danh mục dữ liệu giao thông";
-    // Đường thủy nội địa
-    if (path.includes("duong-thuy/tuyen")) return "Tuyến đường thủy nội địa";
-    if (path.includes("duong-thuy/nhanh-luong")) return "Nhánh của Luồng chạy tàu thuyền";
-    if (path.includes("duong-thuy/bien-bao")) return "Biển báo đường thủy";
-    if (path.includes("duong-thuy/den-hieu")) return "Đèn hiệu đường thủy";
-    if (path.includes("duong-thuy/cot-bien-bao")) return "Cột biển báo đường thủy";
-    if (path.includes("duong-thuy/phao")) return "Phao đường thủy";
-    if (path.includes("duong-thuy/cot-thuy-chi")) return "Cột thủy chí";
-    if (path.includes("duong-thuy/phu-tro-khac")) return "Công trình phụ trợ khác đường thủy nội địa";
-    // Đường sắt đô thị
-    if (path.includes("duong-sat/tuyen")) return "Tuyến đường sắt đô thị";
-    if (path.includes("duong-sat/tru-cau")) return "Trụ cầu đường sắt đô thị";
-    if (path.includes("duong-sat/khu-depot")) return "Khu depot đường sắt đô thị";
-    if (path.includes("duong-sat/ga")) return "Ga đường sắt đô thị";
-    // Quản trị vận hành
-    if (path.includes("admin/dong-bo-dmdc")) return "Cấu hình đồng bộ DMDC từ LGSP";
-    if (path.includes("admin/api-dong-bo")) return "API đồng bộ danh mục dùng chung";
-    if (path.includes("admin/log-trao-doi")) return "Nhật ký trao đổi, chia sẻ dữ liệu";
-    if (path.includes("admin/dong-bo-sso")) return "Đồng bộ tài khoản người dùng SSO";
-    if (path.includes("admin/xac-thuc-sso")) return "Xác thực người dùng với SSO";
-    if (path.includes("admin/chinh-sach-truy-cap")) return "Thiết lập chính sách truy cập hệ thống";
-    if (path.includes("admin/nhom-quyen")) return "Quản lý nhóm quyền người dùng";
-    if (path.includes("admin/tai-khoan")) return "Quản lý tài khoản người dùng";
-    if (path.includes("admin/co-cau-to-chuc")) return "Quản lý cơ cấu tổ chức";
-    if (path.includes("admin/danh-muc-dia-phan")) return "Quản lý danh mục địa phận (hành chính)";
-    if (path.includes("admin/timeout")) return "Thiết lập giới hạn thời gian chờ (timeout)";
-    if (path.includes("admin/lich-su-tac-dong")) return "Quản lý lịch sử tác động";
-    if (path.includes("admin/lich-su-loi")) return "Quản lý lịch sử lỗi phát sinh";
-    if (path.includes("admin/chinh-sach-luu-tru")) return "Quản lý chính sách lưu trữ nhật ký";
-    if (path.includes("admin/luu-log")) return "Lưu log hệ thống";
-    if (path.includes("admin/gui-log-api")) return "Gửi thông tin log tập trung (API)";
-    if (path.includes("admin/thong-bao")) return "Thông báo hệ thống";
-    if (path.includes("cap-phep/giay-phep-dao-duong")) return "Quản lý Giấy phép đào đường";
-    if (path.includes("luu-luong/thong-ke")) return "Thống kê Lưu lượng Giao thông";
-    if (path.includes("luu-luong/heatmap")) return "Bản đồ nhiệt Lưu lượng (Heatmap)";
-    return "Giao thông đường bộ";
+    return "Hệ thống quản lý giao thông";
   };
+
 
   return (
     <div className="flex h-screen overflow-hidden bg-background">
@@ -944,8 +796,8 @@ export default function DashboardLayout() {
           {/* Navigation */}
           <div className="flex-1 px-3 py-4 overflow-y-auto scrollbar-thin">
             <nav className="space-y-1">
-              {filteredNavItems.map((item, index) => (
-                <NavItemComponent key={index} item={item} />
+              {filteredNavItems.map((item) => (
+                <NavItemComponent key={item.title} item={item} />
               ))}
             </nav>
           </div>
